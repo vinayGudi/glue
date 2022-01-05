@@ -2,4 +2,4 @@
    backend "s3" {
    }
  }
-#test
+#tests
