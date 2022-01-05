@@ -34,6 +34,7 @@ phases:
 #       # - chmod 400 clixtream.pem
         - terraform init -input=false -backend-config=environment/dev/s3-bucket.tfvars
         - terraform plan -out dev-plan.tfplan -var-file=environment/dev/variables.tfvars -input=false
+        - terraform apply "dev-plan.tfplan"
 #       - aws s3 cp dev-plan.tfplan s3://gudi/infra/
 #   build:
 #     commands:
