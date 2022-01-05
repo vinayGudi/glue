@@ -25,12 +25,16 @@ phases:
         - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
         - aws configure set region ap-south-1
         - aws configure list
+        - apt-get install unzip
+        - wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
+        - unzip terraform_1.0.0_linux_amd64.zip
+        - mv ./terraform /usr/local/bin/
 #       # - cd infra
 #       # - aws s3 cp s3://clixtream-infra-state-bucket/clixtream.pem ./
 #       # - chmod 400 clixtream.pem
-#       - terraform init -input=false -backend-config=environment/dev/s3-bucket.tfvars
-#       - terraform plan -out dev-plan.tfplan -var-file=environment/dev/variables.tfvars -input=false
-#       # - aws s3 cp $CI_ENVIRONMENT_NAME-plan.tfplan s3://clixtream-infra-state-bucket/infra/
+        - terraform init -input=false -backend-config=environment/dev/s3-bucket.tfvars
+        - terraform plan -out dev-plan.tfplan -var-file=environment/dev/variables.tfvars -input=false
+#       - aws s3 cp dev-plan.tfplan s3://gudi/infra/
 #   build:
 #     commands:
 #       - terraform init  
