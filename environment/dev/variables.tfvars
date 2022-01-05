@@ -1,5 +1,6 @@
 glue_job_name="insearch-job"
-glue_job_role_arn="arn:aws:iam::033812576448:role/service-role/AWSGlueServiceRole-qwerty2"
+#glue_job_role_arn="arn:aws:iam::033812576448:role/service-role/AWSGlueServiceRole-qwerty2"
+glue_job_role_arn="arn:aws:iam::033812576448:role/t4-glue-service-role"
 s3_location="s3://vnetnews/test/test-1/test-3/test.py"
 aws_region="ap-south-1"
 cloudwatch_log_group_name="test-log-group" 
