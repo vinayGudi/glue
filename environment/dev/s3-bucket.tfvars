@@ -1,4 +1,4 @@
 #bucket     = "inviz-search-tul-tf-state-bucket"
-bucket = "vnetnews"
-key    = "terraform-state/vnetnews"
+bucket = "gudi"
+key    = "terraform-state/gudi"
 region = "ap-south-1"
