@@ -13,7 +13,7 @@ resource "aws_glue_job" "insearch-infra-glue-jobs-provisioning" {
   }
   default_arguments = {
     # ... potentially other arguments ...
-    "--continuous-log-logGroup"          = aws_cloudwatch_log_group.insearch-infra-glue-jobs-cloudwatch-log-group.name
+    #"--continuous-log-logGroup"          = aws_cloudwatch_log_group.insearch-infra-glue-jobs-cloudwatch-log-group.name
     "--enable-continuous-cloudwatch-log" = "false"
     "--enable-continuous-log-filter"     = "false"
     "--enable-metrics"                   = "false"
