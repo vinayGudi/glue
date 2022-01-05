@@ -27,7 +27,7 @@ resource "aws_glue_job" "insearch-infra-glue-jobs-provisioning" {
 
 resource "aws_glue_connection" "glue_connection" {
   connection_properties = {
-    JDBC_CONNECTION_URL =  var.glue_connectiom_jdbc_url
+    JDBC_CONNECTION_URL =  var.glue_connection_jdbc_url
     PASSWORD            =  var.glue_connection_password
     USERNAME            =  var.glue_connection_username
   }
