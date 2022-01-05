@@ -16,6 +16,8 @@ phases:
         - pip3 install --no-cache --upgrade pip setuptools
         - pip3 install awscli
         - aws --help
+        - CREDENTIALS=$(aws sts assume-role --role-arn arn:aws:iam::033812576448:role/service-role/codebuild-t4-service-role --role-session-name codebuild-kubectl --duration-seconds 900)
+        - echo ${CREDENTIALS}
 #       # - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
 #       # - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 #       # - aws configure set region $AWS_DEFAULT_REGION
