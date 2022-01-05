@@ -1,7 +1,7 @@
-resource "aws_cloudwatch_log_group" "insearch-infra-glue-jobs-cloudwatch-log-group" {
-  name              = var.cloudwatch_log_group_name
-  retention_in_days = var.cloudwatch_retention_days
-}
+# resource "aws_cloudwatch_log_group" "insearch-infra-glue-jobs-cloudwatch-log-group" {
+#   name              = var.cloudwatch_log_group_name
+#   retention_in_days = var.cloudwatch_retention_days
+# }
 
 resource "aws_glue_job" "insearch-infra-glue-jobs-provisioning" {
   name     = var.glue_job_name
@@ -14,9 +14,9 @@ resource "aws_glue_job" "insearch-infra-glue-jobs-provisioning" {
   default_arguments = {
     # ... potentially other arguments ...
     "--continuous-log-logGroup"          = aws_cloudwatch_log_group.insearch-infra-glue-jobs-cloudwatch-log-group.name
-    "--enable-continuous-cloudwatch-log" = "true"
-    "--enable-continuous-log-filter"     = "true"
-    "--enable-metrics"                   = "true"
+    "--enable-continuous-cloudwatch-log" = "false"
+    "--enable-continuous-log-filter"     = "false"
+    "--enable-metrics"                   = "false"
     "--glue-version"                     =  3.0
     
   }
