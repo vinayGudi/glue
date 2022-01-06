@@ -10,7 +10,7 @@ phases:
 #       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
 # #       - apt-get install unzip
 # #       - wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
-#       - unzip terraform_1.0.0_linux_amd64.zip
+#       - unzip terraform_1.0.0_linux_amd64.zipzip
 #       - mv ./terraform /usr/local/bin/
         - python3 -m ensurepip
         - pip3 install --no-cache --upgrade pip setuptools
